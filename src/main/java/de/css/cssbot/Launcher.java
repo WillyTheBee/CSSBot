@@ -1,5 +1,6 @@
 package de.css.cssbot;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -11,11 +12,12 @@ public class Launcher {
         final String pathToConfig = Arrays.stream(args)
                 .filter(s -> s.startsWith("pathToConfig"))
                 .findFirst()
-                .orElse("src/config.properties");
+                .orElse("./config.properties");
 
         Config.setPathToConfig(Path.of(pathToConfig));
 
         Config config = new Config();
         System.out.println(config.getDiscordToken());
+        System.out.println("test");
     }
 }
