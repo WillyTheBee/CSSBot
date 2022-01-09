@@ -1,11 +1,16 @@
 package de.css.cssbot;
 
-import java.io.File;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 
+
 public class Launcher {
+
+    private static Logger logger = LoggerFactory.getLogger(Launcher.class);
 
     public static void main(String[] args) throws IOException {
 
@@ -17,7 +22,10 @@ public class Launcher {
         Config.setPathToConfig(Path.of(pathToConfig));
 
         Config config = new Config();
+
+        logger.info("test info Log");
+        logger.warn("warn log");
+
         System.out.println(config.getDiscordToken());
-        System.out.println("test");
     }
 }
